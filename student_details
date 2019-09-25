@@ -1,0 +1,89 @@
+import java.util.HashMap;
+import java.io.*;
+/**
+ *
+ * @author suman
+ */
+public class Student_details {
+
+    /**
+     * @param args the command line arguments
+     */
+    /*dob,phone, address*/
+    String dob,phone,address,name;
+
+    public String getDob() {
+        return dob;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    public static void main(String[] args)throws Exception {
+        // TODO code application logic here
+        int n;
+        String name;
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter number of students");
+        n=Integer.parseInt(br.readLine());
+        Student_details students[]=new Student_details[n];
+        for(int i=0;i<n;i++)
+        {
+            students[i]=new Student_details();
+            System.out.println("Enter "+(i+1)+" student details:");
+            System.out.println("Enter name:");
+            students[i].setName(br.readLine());
+            System.out.println("Enter phone number");
+            students[i].setPhone(br.readLine());
+            System.out.println("Enter address");
+            students[i].setAddress(br.readLine());
+            System.out.println("Enter dob");
+            students[i].setDob(br.readLine());
+            System.out.println();
+        }
+        System.out.println("Enter name of student to search for else hit -1 to exit");
+        name=br.readLine();
+        while(!name.equals("-1"))
+        {
+            for(int i=0;i<n;i++)
+            {
+                if(students[i].getName().equals(name))
+                {
+                    System.out.println("Name: "+students[i].getName());
+                    System.out.println("Phone: "+students[i].getPhone());
+                    System.out.println("DOB: "+students[i].getDob());
+                    System.out.println("Address: "+students[i].getAddress());
+                }
+            }
+            System.out.println("\nEnter name of student to search for else hit -1 to exit");
+            name=br.readLine();
+        }
+        System.out.println("Thanks");
+    }
+    
+}
