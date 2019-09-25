@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.io.*;
 /**
  *
@@ -49,28 +48,43 @@ public class Student_details {
         int n;
         String name;
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter number of students");
-        n=Integer.parseInt(br.readLine());
-        Student_details students[]=new Student_details[n];
-        for(int i=0;i<n;i++)
-        {
-            students[i]=new Student_details();
-            System.out.println("Enter "+(i+1)+" student details:");
-            System.out.println("Enter name:");
-            students[i].setName(br.readLine());
-            System.out.println("Enter phone number");
-            students[i].setPhone(br.readLine());
-            System.out.println("Enter address");
-            students[i].setAddress(br.readLine());
-            System.out.println("Enter dob");
-            students[i].setDob(br.readLine());
-            System.out.println();
-        }
+        Student_details students[]=new Student_details[5];
+        
+        students[0]=new Student_details();
+        students[0].setName("Sumanth");
+        students[0].setDob("08/08/2009");
+        students[0].setAddress("HSR Layout");
+        students[0].setPhone("123456789");
+        
+        students[1]=new Student_details();
+        students[1].setName("Vijeth");
+        students[1].setDob("10/08/2010");
+        students[1].setAddress("KS Layout");
+        students[1].setPhone("987654321");
+        
+        students[2]=new Student_details();
+        students[2].setName("Rahul N");
+        students[2].setDob("02/02/2019");
+        students[2].setAddress("Banashankari");
+        students[2].setPhone("798465132");
+        
+        students[3]=new Student_details();
+        students[3].setName("Vishnu");
+        students[3].setDob("10/10/1998");
+        students[3].setAddress("Yelahanka");
+        students[3].setPhone("1324657987");
+        
+        students[4]=new Student_details();
+        students[4].setName("Akshay");
+        students[4].setDob("01/08/2009");
+        students[4].setAddress("Kanakapura");
+        students[4].setPhone("147258369");
+        
         System.out.println("Enter name of student to search for else hit -1 to exit");
         name=br.readLine();
         while(!name.equals("-1"))
         {
-            for(int i=0;i<n;i++)
+            for(int i=0;i<students.length;i++)
             {
                 if(students[i].getName().equals(name))
                 {
